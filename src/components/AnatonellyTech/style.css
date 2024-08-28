@@ -1,0 +1,193 @@
+#introduction {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+#introduction.columns {
+  align-content: stretch;
+  align-items: stretch;
+}
+
+.letter {
+  text-align: center;
+  color: black;
+  font-size: 10vmax;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px 6px;
+}
+
+#introduction.columns .letter {
+  flex-basis: 25%;
+}
+.for,
+.anatonelly {
+  font-size: 5vmax;
+  color: white;
+}
+.for {
+  padding: 2px 1.6vmax;
+  font-weight: 300;
+  display: none;
+}
+.anatonelly {
+  padding: 2px 0;
+  font-weight: 600;
+  display: none;
+}
+#introduction.final .for,
+#introduction.final .anatonelly {
+  display: block;
+  filter: drop-shadow(0 0 0.75rem #ffffff40);
+}
+.T {
+  background: #0e7490;
+  color: #262626;
+  width: 10rem;
+}
+.e {
+  background: #0891b2;
+  color: #262626;
+  width: 10rem;
+}
+.c {
+  background: #06b6d4;
+  color: #262626;
+  width: 10rem;
+}
+.h {
+  background: #22d3ee;
+  color: #262626;
+  width: 10rem;
+}
+#introduction.plain .letter {
+  background: transparent;
+  color: white;
+  padding: 0;
+}
+
+#introduction.final .T,
+#introduction.none .T {
+  border-radius: 10px 0 0 10px;
+}
+#introduction.final .h,
+#introduction.none .h {
+  border-radius: 0 10px 10px 0;
+}
+
+.logo {
+  position: fixed;
+  width: 100px;
+  bottom: 20px;
+  right: 30px;
+}
+
+:root {
+  --bg: hsl(0 0% 2%);
+  --color: hsl(0 0% 100% / 0.1);
+  --underline-width: 1lh;
+  --underline-block-width: 200vmax;
+  --underline-color: #0c0035;
+  --underline-color-hover: hsl(180 100% 50% / 1);
+  --underline-transition: 5s;
+  --finish-fill: hsl(0 0% 100%);
+  --accent: #06b6d4;
+  --fill: white;
+}
+
+@media (min-width: 804px) {
+  .titleReveal {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+  }
+
+  .titleReveal > span {
+    outline-color: hsl(10 80% 50%);
+    outline-offset: 1ch;
+    font-size: 6rem;
+    color: var(--color);
+    text-decoration: none;
+    background-image:
+		/* First one is the highlight */ linear-gradient(
+        90deg,
+        transparent calc(100% - 8ch),
+        var(--accent) calc(100% - 8ch)
+      ),
+      linear-gradient(90deg, var(--fill), var(--fill)),
+      linear-gradient(90deg, var(--underline-color), var(--underline-color));
+    background-size: var(--underline-block-width) var(--underline-width),
+      var(--underline-block-width) var(--underline-width),
+      100% var(--underline-width);
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 100%;
+    background-clip: text;
+    color: var(--finish-fill);
+  }
+}
+
+@media (max-width: 802px) {
+  .titleReveal {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+  }
+
+  .titleReveal > span {
+    outline-color: hsl(10 80% 50%);
+    outline-offset: 1ch;
+    font-size: 1.75rem;
+    color: var(--color);
+    text-decoration: none;
+    background-image:
+		/* First one is the highlight */ linear-gradient(
+        90deg,
+        transparent calc(100% - 8ch),
+        var(--accent) calc(100% - 8ch)
+      ),
+      linear-gradient(90deg, var(--fill), var(--fill)),
+      linear-gradient(90deg, var(--underline-color), var(--underline-color));
+    background-size: var(--underline-block-width) var(--underline-width),
+      var(--underline-block-width) var(--underline-width),
+      100% var(--underline-width);
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 100%;
+    background-clip: text;
+    color: var(--finish-fill);
+  }
+}
+
+
+@media (max-width: 980px) {
+  #introduction {
+    flex-direction: column;
+  }
+
+  #introduction.final .T,
+  #introduction.none .T {
+    border-radius: 10px 10px 0px 0px;
+  }
+  #introduction.final .h,
+  #introduction.none .h {
+    border-radius: 0 0 10px 10px;
+  }
+
+  .for,
+  .anatonelly {
+    font-size: 3vmax;
+  }
+  #introduction.final .for,
+  #introduction.final .anatonelly {
+    filter: drop-shadow(0 0 0.5rem #ffffff40);
+  }
+}

@@ -1,0 +1,89 @@
+:root {
+  --bgGlobal: hsl(0 0% 2%);
+  --colorGlobal: #e5e5e5;
+  --underline-width: 1lh;
+  --underline-block-width: 200vmax;
+  --underline-colorGlobal: #0000;
+  --underline-color-hover: hsl(180 100% 50% / 1);
+  --underline-transition: 5s;
+  --finish-fill: hsl(0 0% 100%);
+  --accentGlobal: #fbbf24;
+  --fillGlobal: #0000;
+}
+
+.p {
+  max-width: 70vw;
+  overflow: hidden;
+  /* padding: 10ch; */
+  margin: 0;
+  color: var(--colorGlobal);
+}
+
+.p > span {
+  outline-color: hsl(10 80% 50%);
+  outline-offset: 1ch;
+  font-size: clamp(3rem, 4vw + 1rem, 10rem);
+  color: var(--colorGlobal);
+  text-decoration: none;
+  background-image:
+		/* First one is the highlight */ linear-gradient(
+      90deg,
+      transparent calc(100% - 8ch),
+      var(--accentGlobal) calc(100% - 8ch)
+    ),
+    linear-gradient(90deg, var(--fillGlobal), var(--fillGlobal)),
+    linear-gradient(
+      90deg,
+      var(--underline-colorGlobal),
+      var(--underline-colorGlobal)
+    );
+  background-size: var(--underline-block-width) var(--underline-width),
+    var(--underline-block-width) var(--underline-width),
+    100% var(--underline-width);
+  background-repeat: no-repeat;
+  background-position-x: 0;
+  background-position-y: 100%;
+  background-clip: text;
+  color: var(--finish-fill);
+}
+
+.p4 > span {
+  font-size: clamp(4rem, 5vw + 1rem, 10rem);
+}
+
+@media (max-width: 802px) {
+  .p {
+    width: 100%;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+  }
+
+  .p > span {
+    outline-color: hsl(10 80% 50%);
+    outline-offset: 1ch;
+    font-size: 1.75rem;
+    color: var(--colorGlobal);
+    text-decoration: none;
+    background-image:
+          /* First one is the highlight */ linear-gradient(
+        90deg,
+        transparent calc(100% - 8ch),
+        var(--accentGlobal) calc(100% - 8ch)
+      ),
+      linear-gradient(90deg, var(--fillGlobal), var(--fillGlobal)),
+      linear-gradient(
+        90deg,
+        var(--underline-colorGlobal),
+        var(--underline-colorGlobal)
+      );
+    background-size: var(--underline-block-width) var(--underline-width),
+      var(--underline-block-width) var(--underline-width),
+      100% var(--underline-width);
+    background-repeat: no-repeat;
+    background-position-x: 0;
+    background-position-y: 100%;
+    background-clip: text;
+    color: var(--finish-fill);
+  }
+}
